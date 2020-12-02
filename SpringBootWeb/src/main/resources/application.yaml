@@ -1,6 +1,15 @@
+# override tomcat port
 server.port: 8081
+
+# Actuator - view all endpoints
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
+weatherservice:
+  apikey: "ab07d132eb5b178ff88206a44bed4dd2"
+
+stockservice:
+  apikey: "bd6444136d5caebb3dcd1cc1f204a7a2"
