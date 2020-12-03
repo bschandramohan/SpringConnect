@@ -36,6 +36,7 @@ dependencies {
     // Validation
     implementation("org.springframework.boot:spring-boot-starter-validation")
 //    implementation("javax.validation:validation-api")
+//    implementation("org.hibernate:hibernate-validator:6.0.12.Final")
 }
 
 tasks.withType<KotlinCompile> {
