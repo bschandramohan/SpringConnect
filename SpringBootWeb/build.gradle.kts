@@ -17,16 +17,18 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    // Actuator
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     // Couldn't get HAL browser to work
 //    implementation("org.springframework.data:spring-data-rest-webmvc:3.4.1")
 //    implementation("org.springframework.boot:spring-boot-starter-data-rest")
 //    implementation("org.springframework.data:spring-data-rest-hal-browser:3.3.5-release")
 
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 tasks.withType<KotlinCompile> {
