@@ -10,8 +10,9 @@ import org.springframework.stereotype.Service
 class MorningInfoServiceImpl(var weatherService: WeatherService, var stockPriceService: StockPriceService)
     : MorningInfoService {
     @TimeIt
-    override fun getMorningInfo(): MorningInfo {
+    override fun getMorningInfo(weatherZipCode: String): MorningInfo {
         val stockPrice = stockPriceService.getStockPrice()
+        val weatherInfo = weatherService.getWeather(weatherZipCode)
         return MorningInfo("", listOf(stockPrice))
     }
 }

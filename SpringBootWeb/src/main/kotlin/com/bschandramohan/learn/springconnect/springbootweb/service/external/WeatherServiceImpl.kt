@@ -3,6 +3,7 @@ package com.bschandramohan.learn.springconnect.springbootweb.service.external
 import com.bschandramohan.learn.springconnect.springbootweb.aop.TimeIt
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.cache.annotation.Cacheable
 import org.springframework.stereotype.Service
 import java.net.URL
 
@@ -14,6 +15,7 @@ class WeatherServiceImpl : WeatherService {
 
     var logger = LoggerFactory.getLogger(WeatherServiceImpl::class.java)
 
+    @Cacheable("Weather")
     @TimeIt
     override fun getWeather(zipCode: String): String {
         return try {

@@ -22,16 +22,14 @@ class MorningInfoApi(var morningInfoService: MorningInfoService) {
     @GetMapping(value = ["/MorningInfo/{zipCode}"])
     fun getMorningInfoForZip(@Min(1000) @PathVariable zipCode: Int): MorningInfo {
         logger.info("ZipCode=$zipCode")
-        // TEMP: For now just return default
-        return morningInfoService.getMorningInfo()
+        return morningInfoService.getMorningInfo(zipCode.toString())
     }
 
     @TimeIt
     @GetMapping(value = ["/MorningInfoForPrefs"])
     fun getMorningInfoForPreferences(@Valid @RequestBody preferences: Preferences): MorningInfo {
         logger.info("${preferences.weatherZipCode} passed")
-        // TEMP: For now just return default
-        return morningInfoService.getMorningInfo()
+        return morningInfoService.getMorningInfo(preferences.weatherZipCode.toString())
     }
 
     private val logger = LoggerFactory.getLogger(MorningInfoApi::class.java)
