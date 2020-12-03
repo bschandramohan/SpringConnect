@@ -37,6 +37,9 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-validation")
 //    implementation("javax.validation:validation-api")
 //    implementation("org.hibernate:hibernate-validator:6.0.12.Final")
+
+    // Swagger
+    implementation("org.springdoc:springdoc-openapi-ui:1.5.0")
 }
 
 tasks.withType<KotlinCompile> {
