@@ -29,6 +29,9 @@ dependencies {
 //    implementation("org.springframework.boot:spring-boot-starter-data-rest")
 //    implementation("org.springframework.data:spring-data-rest-hal-browser:3.3.5-release")
 
+    // AOP
+    implementation("org.springframework.boot:spring-boot-starter-aop")
+    implementation("org.aspectj:aspectjweaver")
 }
 
 tasks.withType<KotlinCompile> {
