@@ -32,6 +32,10 @@ dependencies {
     // AOP
     implementation("org.springframework.boot:spring-boot-starter-aop")
     implementation("org.aspectj:aspectjweaver")
+
+    // Validation
+    implementation("org.springframework.boot:spring-boot-starter-validation")
+//    implementation("javax.validation:validation-api")
 }
 
 tasks.withType<KotlinCompile> {
