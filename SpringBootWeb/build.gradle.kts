@@ -40,6 +40,9 @@ dependencies {
 
     // Swagger
     implementation("org.springdoc:springdoc-openapi-ui:1.5.0")
+
+    // Caching
+    implementation("org.springframework.boot:spring-boot-starter-cache")
 }
 
 tasks.withType<KotlinCompile> {
