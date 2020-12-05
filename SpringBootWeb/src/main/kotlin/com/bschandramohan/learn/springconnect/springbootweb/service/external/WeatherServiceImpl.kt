@@ -1,6 +1,7 @@
 package com.bschandramohan.learn.springconnect.springbootweb.service.external
 
 import com.bschandramohan.learn.springconnect.springbootweb.aop.TimeIt
+import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.cache.annotation.Cacheable
@@ -13,7 +14,7 @@ class WeatherServiceImpl : WeatherService {
     @Value("\${weatherservice.apikey}")
     lateinit var weatherApiKey: String
 
-    var logger = LoggerFactory.getLogger(WeatherServiceImpl::class.java)
+    var logger: Logger = LoggerFactory.getLogger(WeatherServiceImpl::class.java)
 
     @Cacheable("Weather")
     @TimeIt
