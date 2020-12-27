@@ -4,8 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class WorldbankdataApplication
+class WorldBankDataApplication
 
 fun main(args: Array<String>) {
-    runApplication<WorldbankdataApplication>(*args)
+    runApplication<WorldBankDataApplication>(*args)
 }
