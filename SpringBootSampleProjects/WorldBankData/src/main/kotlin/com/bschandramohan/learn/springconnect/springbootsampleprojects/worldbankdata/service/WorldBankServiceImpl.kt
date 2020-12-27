@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import com.fasterxml.jackson.module.kotlin.readValue
 import org.slf4j.LoggerFactory
+import org.springframework.cache.annotation.Cacheable
 
 @Service
 class WorldBankServiceImpl : WorldBankService {
@@ -19,6 +20,7 @@ class WorldBankServiceImpl : WorldBankService {
 
     val previousYear = LocalDate.now().year - 1
 
+    @Cacheable("CountryGdp")
     override fun getGdp(countryCode: String): String {
         val url = "http://api.worldbank.org/v2/countries/$countryCode/indicators/NY.GDP.MKTP.CD?format=json&date=$previousYear"
         val response = URL(url).readText()
