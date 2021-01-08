@@ -8,7 +8,7 @@ import org.springframework.web.reactive.function.server.RouterFunctions
 import org.springframework.web.reactive.function.server.ServerResponse
 
 /**
- * Router way of implementing reactive web service in Spring
+ * Method 1: Router way of implementing reactive web service in Spring
  *
  * Reference: https://spring.io/guides/gs/reactive-rest-service/
  */

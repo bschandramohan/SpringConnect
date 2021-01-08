@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController
 import reactor.core.publisher.Flux
 import reactor.kotlin.core.publisher.toFlux
 
+// Method 2: Using Annotation way of creating reactive web service
 @RestController
 @RequestMapping("controller")
 class LettersReactiveController {
