@@ -16,4 +16,7 @@ fun main(args: Array<String>) {
 
     println("Router Vowels Result=${ClientApplication().getResult("/router/vowels")}")
     println("Router Consonants Result=${ClientApplication().getResult("/router/consonants")}")
+
+    println("Coroutine Vowels Result=${ClientApplication().getResult("/coroutine/vowels")}")
+    println("Coroutine Consonants Result=${ClientApplication().getResult("/coroutine/consonants")}")
 }
