@@ -57,4 +57,16 @@ class LinkApi(var linkService: LinkService) {
             ApiServerError("Link", "List", e)
         }
     }
+
+    @GetMapping("/search")
+    fun search(@RequestParam patronId: String): ResponseEntity<Any> {
+        return try {
+            ResponseEntity.ok(linkService.findByPatron(patronId))
+        } catch (e: Exception) {
+            if (e is EntityNotFoundException || e.cause is EntityNotFoundException)
+                ApiNotFoundError("Link")
+            else
+                ApiServerError("Link", "get", e)
+        }
+    }
 }

@@ -22,7 +22,5 @@ class LinkService(var linkRepository: LinkRepository) {
 
     fun list(): MutableList<Link> = linkRepository.findAll()
 
-    fun findByPatron(patronId: String) {
-        linkRepository.findAll()
-    }
+    fun findByPatron(patronId: String) = linkRepository.findByPatronId(patronId)
 }

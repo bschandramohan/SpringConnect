@@ -10,8 +10,8 @@ data class Link(
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid2")
-    val id: String?,
-    val patronId: String?,
-    val url: String?,
-    val description: String?
+    var id: String?,
+    var patronId: String?,
+    var url: String?,
+    var description: String?
 )
