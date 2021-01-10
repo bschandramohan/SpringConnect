@@ -19,8 +19,13 @@ class PatronApiTest(@Autowired var restTemplate: TestRestTemplate, @LocalServerP
 
         val savedPatron = restTemplate.postForObject(patronApiEndpoint, samplePatron, Patron::class.java)
         assert(savedPatron != null)
+        assert(savedPatron != null) { "Saved Patron cannot be null" }
+        assert(savedPatron.id != null) { "Saved Patron ID cannot be null" }
+        assert(savedPatron.name == samplePatron.name) { "Saved Patron name should match the sender" }
 
         val retrievedPatron = restTemplate.getForObject("${patronApiEndpoint}${savedPatron.id}", Patron::class.java)
         assert(retrievedPatron != null)
+        assert(retrievedPatron.id != null) { "Retrieved Patron ID cannot be null" }
+        assert(retrievedPatron.name == samplePatron.name) { "Retrieved Patron nameurl should match the sender" }
     }
 }
