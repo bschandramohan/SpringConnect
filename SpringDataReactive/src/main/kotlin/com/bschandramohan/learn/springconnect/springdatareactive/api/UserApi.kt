@@ -2,6 +2,7 @@ package com.bschandramohan.learn.springconnect.springdatareactive.api
 
 import com.bschandramohan.learn.springconnect.springdatareactive.domain.User
 import com.bschandramohan.learn.springconnect.springdatareactive.service.UserService
+import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
@@ -11,7 +12,7 @@ class UserApi(var userService: UserService) {
     @PostMapping("/")
     fun create(@RequestBody user: User): ResponseEntity<Any> {
         return try {
-            ResponseEntity.ok(userService.create(user))
+            ResponseEntity(userService.create(user), HttpStatus.CREATED)
         } catch (e: Exception) {
             ApiServerError("User", "create", e)
         }
@@ -29,7 +30,8 @@ class UserApi(var userService: UserService) {
     @DeleteMapping("/{id}")
     fun delete(@PathVariable id: String): ResponseEntity<Any> {
         return try {
-            ResponseEntity.ok(userService.delete(id))
+            userService.delete(id)
+            ResponseEntity.ok(true)
         } catch (e: Exception) {
             ApiServerError("User", "delete", e)
         }

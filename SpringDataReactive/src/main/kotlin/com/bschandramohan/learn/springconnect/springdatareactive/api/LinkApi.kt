@@ -2,6 +2,7 @@ package com.bschandramohan.learn.springconnect.springdatareactive.api
 
 import com.bschandramohan.learn.springconnect.springdatareactive.domain.Link
 import com.bschandramohan.learn.springconnect.springdatareactive.service.LinkService
+import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
@@ -12,7 +13,7 @@ class LinkApi(var linkService: LinkService) {
     @PostMapping("/")
     fun create(@RequestBody link: Link): ResponseEntity<Any> {
         return try {
-            ResponseEntity.ok(linkService.create(link))
+            ResponseEntity(linkService.create(link), HttpStatus.CREATED)
         } catch (e: Exception) {
             ApiServerError("Link", "create", e)
         }
@@ -30,7 +31,8 @@ class LinkApi(var linkService: LinkService) {
     @DeleteMapping("/{id}")
     fun delete(@PathVariable id: String): ResponseEntity<Any> {
         return try {
-            ResponseEntity.ok(linkService.delete(id))
+            linkService.delete(id)
+            ResponseEntity.ok(true)
         } catch (e: Exception) {
             ApiServerError("Link", "delete", e)
         }
