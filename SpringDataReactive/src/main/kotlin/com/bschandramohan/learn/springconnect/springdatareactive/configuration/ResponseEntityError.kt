@@ -1,4 +1,4 @@
-package com.bschandramohan.learn.springconnect.springdatareactive.api
+package com.bschandramohan.learn.springconnect.springdatareactive.configuration
 
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -8,4 +8,4 @@ data class ApiServerError(val entity: String, val operation: String, val e: Exce
     HttpStatus.INTERNAL_SERVER_ERROR
 )
 
-data class ApiNotFoundError(val entity: String) : ResponseEntity<Any>("Entity=$entity NOT found", HttpStatus.NOT_FOUND)
+data class EntityNotFoundError(val entity: String) : ResponseEntity<Any>("Entity=$entity NOT found", HttpStatus.NOT_FOUND)
