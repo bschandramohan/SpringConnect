@@ -1,3 +1,11 @@
+Spring Boot application to connect to different types of database using Spring-Data. Here we connect to postgres (RDBMS)
+and Mongo (NoSQL)
+
+Refer to SpringBootConsole and SpringBootWeb Modules to know about the spring boot configurations (in that order)
+
+We will get into reactive spring boot applications in: SpringBootReactive and reactive spring boot data in the next
+module:  SpringDataReactive
+
 # Postgres docker download
 
 Reference: https://hub.docker.com/_/postgres
